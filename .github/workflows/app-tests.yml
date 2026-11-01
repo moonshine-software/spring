@@ -18,10 +18,13 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        php: [ 8.2, 8.3, 8.4 ]
+        php: [ 8.4, 8.5 ]
         laravel: [ 11, 12 ]
+        include:
+          - php: '8.5'
+            laravel: 13
     
-    name: Test Stubs - Laravel ${{ matrix.laravel }} - PHP ${{ matrix.php }}
+    name: Test Stubs - MoonShine 5 - Laravel ${{ matrix.laravel }} - PHP ${{ matrix.php }}
             
     steps:
       - name: Setup PHP
@@ -36,7 +39,7 @@ jobs:
       - name: Setup Laravel
         run: |
           composer create-project laravel/laravel:^${{ matrix.laravel }} .
-          composer require moonshine/spring:@dev --no-interaction --no-update
+          composer require moonshine/spring:@dev "moonshine/moonshine:5.x-dev" --no-interaction --no-update
           composer config repositories.spring '{"type": "path", "url": "spring"}' --file composer.json
 
       - name: Checkout code

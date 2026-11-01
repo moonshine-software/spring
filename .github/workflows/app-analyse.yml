@@ -18,7 +18,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        php: [ 8.2, 8.3, 8.4 ]
+        php: [ 8.4, 8.5 ]
         laravel: [ 11 ]
     
     name: Analyse Stubs - Laravel ${{ matrix.laravel }} - PHP ${{ matrix.php }}
@@ -37,7 +37,7 @@ jobs:
         run: |
           composer create-project laravel/laravel:^${{ matrix.laravel }} .
           composer require larastan/larastan
-          composer require moonshine/spring:@dev --no-interaction --no-update
+          composer require moonshine/spring:@dev moonshine/moonshine:5.x-dev --no-interaction --no-update
           composer config repositories.spring '{"type": "path", "url": "spring"}' --file composer.json
 
       - name: Checkout code

@@ -1,5 +1,7 @@
 ## MoonShine Spring
 
+The `5.x` branch requires PHP 8.4+ and MoonShine `5.x-dev`. Use the `4.x` branch for MoonShine 4.
+
 ### Install
 
 1. Install the package via Composer:

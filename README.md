@@ -6,7 +6,7 @@ The `5.x` branch requires PHP 8.4+ and MoonShine `5.x-dev`. Use the `4.x` branch
 
 1. Install the package via Composer:
     ```shell
-    composer require moonshine/spring:5.x-dev moonshine/moonshine:5.x-dev
+    composer require moonshine/spring
     ```
 2. Run the command:
     ```shell

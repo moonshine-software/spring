@@ -34,7 +34,7 @@ final class ProfileLayout extends AppLayout
         ];
     }
 
-    protected function getProfileComponent(): Profile
+    protected function getProfileComponent(bool $sidebar = false): Profile
     {
         return Profile::make(
             route: route('profile'),
